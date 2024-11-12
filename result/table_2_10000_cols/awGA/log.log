@@ -1,0 +1,30 @@
+C:\Users\25760\.conda\envs\torch\python.exe "D:/Softwares/JetBrains/PyCharm 2023.1/plugins/python/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port 56060 --file E:\PythonProject\machine_learning\ML_project-Data_2\ML_project\MOEAs\awGA.py
+Connected to pydev debugger (build 231.8109.197)
+====================================================================
+gen|  eval  |      gd     |     igd     |      hv     |   spacing
+--------------------------------------------------------------------
+ 0 |   50   |     None    |     None    | 4.41942E-04 | 1.50725E+03
+ 5 |  300   |     None    |     None    | 2.73981E-04 | 7.08773E+02
+ 10|  550   |     None    |     None    | 1.82575E-04 | 2.27131E+02
+ 15|  800   |     None    |     None    | 1.22634E-04 | 1.19403E+02
+ 20|  1050  |     None    |     None    | 1.22605E-04 | 1.26103E+02
+ 25|  1300  |     None    |     None    | 1.21660E-04 | 9.99292E+01
+ 30|  1550  |     None    |     None    | 1.22519E-04 | 6.62699E+01
+ 35|  1800  |     None    |     None    | 1.06783E-04 | 4.58806E+01
+ 40|  2050  |     None    |     None    | 9.16729E-05 | 4.12056E+01
+ 45|  2300  |     None    |     None    | 8.29146E-05 | 8.42342E+01
+ 50|  2550  |     None    |     None    | 7.43803E-05 | 3.81801E+01
+ 55|  2800  |     None    |     None    | 7.07432E-05 | 3.20098E+00
+ 60|  3050  |     None    |     None    | 7.83841E-05 | 9.92823E+01
+ 65|  3300  |     None    |     None    | 6.99108E-05 | 8.15712E+00
+ 70|  3550  |     None    |     None    | 6.93833E-05 | 2.75446E+01
+ 75|  3800  |     None    |     None    | 6.93833E-05 | 1.88577E+01
+ 80|  4050  |     None    |     None    | 6.93833E-05 | 0.00000E+00
+ 85|  4300  |     None    |     None    | 6.93749E-05 | 2.72159E+01
+ 90|  4550  |     None    |     None    | 6.83013E-05 |     NAN
+ 95|  4800  |     None    |     None    | 6.83013E-05 | 0.00000E+00
+ 99|  5000  |     None    |     None    | 1.66003E-04 | 7.82522E+01
+用时：96.10028839111328 秒
+非支配个体数：50 个
+
+Process finished with exit code 0

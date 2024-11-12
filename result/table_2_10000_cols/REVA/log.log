@@ -1,0 +1,30 @@
+C:\Users\25760\.conda\envs\torch\python.exe "D:/Softwares/JetBrains/PyCharm 2023.1/plugins/python/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port 56734 --file E:\PythonProject\machine_learning\ML_project-Data_2\ML_project\MOEAs\REVA.py
+Connected to pydev debugger (build 231.8109.197)
+====================================================================
+gen|  eval  |      gd     |     igd     |      hv     |   spacing
+--------------------------------------------------------------------
+ 0 |   35   |     None    |     None    | 3.87966E-04 | 3.43108E+03
+ 5 |  210   |     None    |     None    | 8.76601E-05 | 0.00000E+00
+ 10|  385   |     None    |     None    | 1.34277E-04 | 3.13895E+02
+ 15|  560   |     None    |     None    | 1.05714E-04 | 4.14816E+02
+ 20|  735   |     None    |     None    | 1.10963E-04 | 7.20628E+01
+ 25|  910   |     None    |     None    | 1.08999E-04 | 8.37692E+01
+ 30|  1085  |     None    |     None    | 1.06468E-04 | 9.71183E+01
+ 35|  1260  |     None    |     None    | 1.33414E-04 | 2.74804E+02
+ 40|  1435  |     None    |     None    | 1.41924E-04 | 2.58594E+02
+ 45|  1610  |     None    |     None    | 1.36406E-04 | 3.54066E+02
+ 50|  1785  |     None    |     None    | 1.25858E-04 | 1.68151E+02
+ 55|  1960  |     None    |     None    | 1.15899E-04 | 7.36109E+01
+ 60|  2135  |     None    |     None    | 1.23620E-04 | 1.32056E+02
+ 65|  2310  |     None    |     None    | 1.46076E-04 | 2.13879E+02
+ 70|  2485  |     None    |     None    | 1.36887E-04 | 3.16596E+02
+ 75|  2660  |     None    |     None    | 1.16025E-04 | 1.34076E+02
+ 80|  2835  |     None    |     None    | 1.19413E-04 | 1.39538E+02
+ 85|  3010  |     None    |     None    | 1.28749E-04 | 1.20307E+02
+ 90|  3185  |     None    |     None    | 1.31963E-04 | 3.84370E+01
+ 95|  3360  |     None    |     None    | 1.33740E-04 | 1.45729E+02
+ 99|  3500  |     None    |     None    | 1.33808E-04 | 1.07612E+02
+用时：80.64717292785645 秒
+非支配个体数：9 个
+
+Process finished with exit code 0
