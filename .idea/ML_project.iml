@@ -5,13 +5,8 @@
     <orderEntry type="jdk" jdkName="torch" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
-  <component name="PyNamespacePackagesService">
-    <option name="namespacePackageFolders">
-      <list>
-        <option value="$MODULE_DIR$/evaluate" />
-        <option value="$MODULE_DIR$/logs" />
-        <option value="$MODULE_DIR$/model/optimizer" />
-      </list>
-    </option>
+  <component name="PyDocumentationSettings">
+    <option name="format" value="PLAIN" />
+    <option name="myDocStringFormat" value="Plain" />
   </component>
 </module>
