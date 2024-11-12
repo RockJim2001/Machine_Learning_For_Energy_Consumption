@@ -1,0 +1,178 @@
+Index: .idea/encodings.xml
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+deleted file mode 100644
+--- a/.idea/encodings.xml	(revision 0f5596b6adea56b6d41c0dfe41b6264d5ef87686)
++++ /dev/null	(revision 0f5596b6adea56b6d41c0dfe41b6264d5ef87686)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/logs/base-数据/test.log" charset="GBK" />
+-    <file url="file://$PROJECT_DIR$/model/ann/logs/test.log" charset="GBK" />
+-    <file url="file://$PROJECT_DIR$/resource/基础数据-20230723.csv" charset="GBK" />
+-    <file url="PROJECT" charset="UTF-8" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: tools/youhua.sh
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tools/youhua.sh b/tools/youhua.sh
+new file mode 100644
+--- /dev/null	(date 1711281540105)
++++ b/tools/youhua.sh	(date 1711281540105)
+@@ -0,0 +1,38 @@
++#!/usr/bin/env sh
++cd ../MOEAS/
++# 获取当前所处目录
++current_dir =$(pwd)
++echo "当前所处目录为："
++echo $current_dir
++echo "*********************************开始依次执行命令*******************************"
++echo "开始运行awGA优化算法："
++python awGA.py
++wait
++
++echo "开始运行MOEAD优化算法："
++python MOEAD.py
++wait
++
++echo "开始运行MOEADDRA优化算法："
++python MOEADDRA.py
++wait
++
++echo "开始运行NSGA3优化算法："
++python NSGA3.py
++wait
++
++echo "开始运行MOPSO优化算法："
++python MOPSO.py
++wait
++
++echo "开始运行IBEA优化算法："
++python IBEA.py
++wait
++
++echo "开始运行REVA优化算法："
++python REVA.py
++wait
++
++echo "开始运行NSGA2优化算法："
++python NSGA2.py
++wait
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 0f5596b6adea56b6d41c0dfe41b6264d5ef87686)
++++ b/.idea/vcs.xml	(date 1708481718154)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/other.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/other.xml b/.idea/other.xml
+new file mode 100644
+--- /dev/null	(date 1711351446395)
++++ b/.idea/other.xml	(date 1711351446395)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="PySciProjectComponent">
++    <option name="PY_MATPLOTLIB_IN_TOOLWINDOW" value="false" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/ML_project.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\" />\r\n    <orderEntry type=\"jdk\" jdkName=\"torch\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"PyNamespacePackagesService\">\r\n    <option name=\"namespacePackageFolders\">\r\n      <list>\r\n        <option value=\"$MODULE_DIR$/evaluate\" />\r\n        <option value=\"$MODULE_DIR$/logs\" />\r\n        <option value=\"$MODULE_DIR$/model/optimizer\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/ML_project.iml b/.idea/ML_project.iml
+--- a/.idea/ML_project.iml	(revision 0f5596b6adea56b6d41c0dfe41b6264d5ef87686)
++++ b/.idea/ML_project.iml	(date 1708481846968)
+@@ -5,13 +5,8 @@
+     <orderEntry type="jdk" jdkName="torch" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+-  <component name="PyNamespacePackagesService">
+-    <option name="namespacePackageFolders">
+-      <list>
+-        <option value="$MODULE_DIR$/evaluate" />
+-        <option value="$MODULE_DIR$/logs" />
+-        <option value="$MODULE_DIR$/model/optimizer" />
+-      </list>
+-    </option>
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"InspectionProjectProfileManager\">\r\n  <profile version=\"1.0\">\r\n    <option name=\"myName\" value=\"Project Default\" />\r\n    <inspection_tool class=\"PyPackageRequirementsInspection\" enabled=\"true\" level=\"WARNING\" enabled_by_default=\"true\">\r\n      <option name=\"ignoredPackages\">\r\n        <value>\r\n          <list size=\"1\">\r\n            <item index=\"0\" class=\"java.lang.String\" itemvalue=\"mobile-vision\" />\r\n          </list>\r\n        </value>\r\n      </option>\r\n    </inspection_tool>\r\n    <inspection_tool class=\"PyPep8NamingInspection\" enabled=\"true\" level=\"WEAK WARNING\" enabled_by_default=\"true\">\r\n      <option name=\"ignoredErrors\">\r\n        <list>\r\n          <option value=\"N806\" />\r\n          <option value=\"N802\" />\r\n          <option value=\"N803\" />\r\n          <option value=\"N801\" />\r\n        </list>\r\n      </option>\r\n    </inspection_tool>\r\n    <inspection_tool class=\"PyUnresolvedReferencesInspection\" enabled=\"true\" level=\"WARNING\" enabled_by_default=\"true\">\r\n      <option name=\"ignoredIdentifiers\">\r\n        <list>\r\n          <option value=\"key\" />\r\n        </list>\r\n      </option>\r\n    </inspection_tool>\r\n  </profile>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+--- a/.idea/inspectionProfiles/Project_Default.xml	(revision 0f5596b6adea56b6d41c0dfe41b6264d5ef87686)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1708481718090)
+@@ -1,13 +1,27 @@
+ <component name="InspectionProjectProfileManager">
+   <profile version="1.0">
+     <option name="myName" value="Project Default" />
++    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <Languages>
++        <language minSize="611" name="Python" />
++      </Languages>
++    </inspection_tool>
+     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+       <option name="ignoredPackages">
+         <value>
+-          <list size="1">
++          <list size="3">
+             <item index="0" class="java.lang.String" itemvalue="mobile-vision" />
++            <item index="1" class="java.lang.String" itemvalue="torch" />
++            <item index="2" class="java.lang.String" itemvalue="torchvision" />
+           </list>
+         </value>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <option name="ignoredErrors">
++        <list>
++          <option value="E402" />
++        </list>
+       </option>
+     </inspection_tool>
+     <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+@@ -17,6 +31,8 @@
+           <option value="N802" />
+           <option value="N803" />
+           <option value="N801" />
++          <option value="N814" />
++          <option value="N812" />
+         </list>
+       </option>
+     </inspection_tool>
