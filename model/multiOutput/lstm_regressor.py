@@ -32,7 +32,7 @@ class LSTMRegression(nn.Module):
 class LSTMRegressor(Base):
     def __init__(self, x_train, y_train, x_test, y_test, batch_size=32, shuffle=True):
         super(LSTMRegressor, self).__init__(x_train, y_train, x_test, y_test)
-        model = LSTMRegression(input_size=12, hidden_size=5, output_size=4)
+        model = LSTMRegression(input_size=31, hidden_size=5, output_size=6)
         self.model = model
         # 将数据转为 DataLoader
         train_dataset = TensorDataset(self.x_train, self.y_train)

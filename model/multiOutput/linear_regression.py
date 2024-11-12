@@ -35,5 +35,6 @@ from model.multiOutput.base import Base
 class LinearRegressor(Base):
     def __init__(self, x_train, y_train, x_test, y_test):
         super(LinearRegressor, self).__init__(x_train, y_train, x_test, y_test)
+
         model = LinearRegression()
         self.model = model

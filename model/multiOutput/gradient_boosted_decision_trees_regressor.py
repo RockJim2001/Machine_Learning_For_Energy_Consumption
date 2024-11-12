@@ -48,6 +48,14 @@ class GBDTRegressor(Base):
     def __init__(self, x_train, y_train, x_test, y_test):
         super(GBDTRegressor, self).__init__(x_train, y_train, x_test, y_test)
         # 创建 GBDT 回归模型
+        params = {
+            'learning_rate': 0.05,  # 设置学习率
+            'n_estimators': 500,  # 设置树的数量
+            'max_depth': 10,  # 设置树的最大深度
+            'min_samples_split': 2,  # 设置节点划分的最小样本数
+            'min_samples_leaf': 1,  # 设置叶子节点的最小样本数
+            'subsample': 0.8  # 设置子采样率
+        }
         gbdt_regressor = GradientBoostingRegressor()
 
         # 使用MultiOutputRegressor包装支持向量机模型

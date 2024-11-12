@@ -47,7 +47,13 @@ class LGBMRegressor(Base):
     def __init__(self, x_train, y_train, x_test, y_test):
         super(LGBMRegressor, self).__init__(x_train, y_train, x_test, y_test)
         # 创建支持向量机回归模型
-        lgbm_regressor = LGBMRegression()
+        # 自定义参数设置
+        params = {
+            'num_leaves': 31,
+            'learning_rate': 0.1,
+            'n_estimators': 50
+        }
+        lgbm_regressor = LGBMRegression(**params)
 
         # 使用MultiOutputRegressor包装支持向量机模型
         model = MultiOutputRegressor(lgbm_regressor)

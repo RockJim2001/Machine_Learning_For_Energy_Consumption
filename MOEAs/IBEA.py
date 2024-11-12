@@ -23,7 +23,7 @@ from MOEAs.problems.problem_XGBoost import MyProblem as MyProblem_XGBoost # ok
 import matplotlib.pyplot as plt
 import warnings
 
-from config.config import ROOT_PATH, DATASET_NAME
+from config.config import ROOT_PATH, DATASET_NAME, parent_dir
 
 warnings.filterwarnings('ignore')
 
@@ -35,7 +35,7 @@ warnings.filterwarnings('ignore')
 """
 
 # 这里选择需要执行的机器学习方法
-ML_method = 'LGBMRegressor'
+ML_method = 'XGBoostRegressor'
 
 # 建立模型
 if ML_method == 'LinearRegressor':
@@ -84,6 +84,7 @@ if __name__ == '__main__':
     """================================算法参数设置============================="""
     myAlgorithm = ibea(problem, population)  # 实例化一个算法模板对象
     myAlgorithm.mutOper.Pm = 0.1    # 修改变异算子的变异概率
+    myAlgorithm.recOper.XOVR = 0.8  # 修改交叉算子的交叉概率
     myAlgorithm.MAXGEN = 100       # 最大进化代数
     myAlgorithm.logTras = 5         # 设置每多少代记录日志，若设置成0则表示不记录日志
     myAlgorithm.verbose = True     # 设置是否打印输出日志信息
@@ -104,7 +105,7 @@ if __name__ == '__main__':
     problem.aimFunc(NDSet)
     df1 = pd.DataFrame(NDSet.Phen)
     df2 = pd.DataFrame(NDSet.ObjV)
-    dir_path = os.path.join(ROOT_PATH, 'result', DATASET_NAME.split('.')[0], 'IBEA')
+    dir_path = os.path.join(ROOT_PATH, 'result_change', parent_dir, DATASET_NAME.split('.')[0], 'IBEA')
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
     df1.to_csv(os.path.join(dir_path, f'Variable_IBEA_{ML_method}.csv'), header=None, index=None)

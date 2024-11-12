@@ -38,11 +38,13 @@ def load_data(file_path: str):
     if file_format == 'csv':
         file_data = genfromtxt(file_path, delimiter=',')
 
-    col_index = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-    # col_index = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    # col_index = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    col_index = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+                 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]    # 30输入
     x_data = file_data[:, col_index]
     # y_data = file_data[:, [14, 15, 16, 17, 18, 19]]
-    y_data = file_data[:, [14, 15, 17, 18]]
+    # y_data = file_data[:, [33, 34, 35, 36, 38, 39]]     # 6输出
+    y_data = file_data[:, [32, 33, 34, 35]]     # 4输出
     # y_data = file_data[:, [14]]
     end_time = time.time()
     run_time = end_time - start_time

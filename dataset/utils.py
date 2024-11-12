@@ -13,13 +13,13 @@ import os
 
 import torch
 
-from config.config import ROOT_PATH, DATASET_NAME
+from config.config import ROOT_PATH, DATASET_NAME, parent_dir
 from dataset.data_load import load_data, data_processing
 
 
 def data_load():
     # 加载数据集
-    x_data, y_data = load_data(os.path.join(ROOT_PATH, 'resource', DATASET_NAME))
+    x_data, y_data = load_data(os.path.join(ROOT_PATH, 'resource', parent_dir, DATASET_NAME))
     # 数据归一化处理
     x_train, x_test, y_train, y_test = data_processing(x_data, y_data)
 

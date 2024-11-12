@@ -17,7 +17,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-from config.config import log_dir, ROOT_PATH, DATASET_NAME
+from config.config import log_dir, ROOT_PATH, DATASET_NAME, parent_dir
 from config.log_config import log
 from dataset.utils import data_load
 from evaluate.evaluate import relative_absolute_error, relative_squared_error
@@ -202,11 +202,9 @@ def evaluation(X_test, X_train, Y_test, pred_test, Y_train, train_time=0, test_t
             'rse': relative_squared_error(pred_test[:, i], Y_test[:, i]),
             'rse_original': relative_squared_error(restored_data_y_test[:, i], restored_data_pred[:, i]),
         }
-    # data_x = np.vstack((restored_data_x_train, restored_data_x_test))
-    # data_y = np.vstack((restored_data_y_train, restored_data_y_test))
-    # data = np.hstack((data_x, data_y))
     data_train = np.hstack((restored_data_x_train, restored_data_y_train))
     data_test = np.hstack((restored_data_x_test, restored_data_y_test, restored_data_pred))
+    # data = np.hstack((data_x, data_y))
     return result, (data_train, data_test)
 
 
@@ -291,25 +289,27 @@ if __name__ == '__main__':
     print(f"训练数据{len(X_train)}条, 测试数据{len(X_test)}条")
 
     # 建立模型
-    models = ['LinearRegressor', 'KNeighborsRegressor', 'RandomForestRegressor', 'DecisionTreeRegressor',
-              'SupportVectorMachine', 'MultilayerPerceptronRegressor', 'ExtraTreeRegressor',
-              'XGBoostRegressor', 'LGBMRegressor', 'GBDTRegressor', 'CATBoostRegressor',
-              'LSTMRegressor', 'AdaBoostRegressor', 'BaggingRegressor', 'LASSORegressor']
+    # models = ['LinearRegressor', 'KNeighborsRegressor', 'RandomForestRegressor', 'DecisionTreeRegressor',
+    #           'SupportVectorMachine', 'MultilayerPerceptronRegressor', 'ExtraTreeRegressor',
+    #           'XGBoostRegressor', 'LGBMRegressor', 'GBDTRegressor', 'CATBoostRegressor',
+    #           'LSTMRegressor', 'AdaBoostRegressor', 'BaggingRegressor', 'LASSORegressor']
     models = ['LinearRegressor', 'KNeighborsRegressor', 'RandomForestRegressor', 'DecisionTreeRegressor',
               'SupportVectorMachine', 'MultilayerPerceptronRegressor', 'ExtraTreeRegressor',
               'XGBoostRegressor', 'LGBMRegressor', 'GBDTRegressor', 'CATBoostRegressor',
               'AdaBoostRegressor', 'BaggingRegressor', 'LASSORegressor']
-    # models = ['CATBoostRegressor']
     result = []
     # 数据名称
     # header = 'x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,y1,y2,y3,y4,y5,y6'
-    header = 'x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,y1,y2,y3,y4'
+    # header = 'x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,' \
+    #          'x30,x31,y1,y2,y3,y4,y5,y6'
+    header = 'x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,' \
+             'x30,y1,y2,y3,y4'
     for name in models:
         print(f"当前的模型是：{name}")
         # name = 'LogisticRegressor'
         print("哈哈哈哈")
         # 在root目录下为每个方法创建文件夹，对数据进行存储
-        dir_path = os.path.join(ROOT_PATH, 'result', DATASET_NAME.split('.')[0], name)
+        dir_path = os.path.join(ROOT_PATH, 'result_change', parent_dir, DATASET_NAME.split('.')[0], name)
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
         (result_temp, (data_train, data_test)), model = main(X_train, Y_train, X_test, Y_test, name)
@@ -323,8 +323,9 @@ if __name__ == '__main__':
         save_path_test = os.path.join(dir_path, f'{name}_data_test.csv')
         np.savetxt(save_path_test, data_test, delimiter=',', fmt='%.5f', header=header)
 
-    file_path = os.path.join(ROOT_PATH, 'result', DATASET_NAME.split('.')[0], 'result.json')
-
+    file_path = os.path.join(ROOT_PATH, 'result_change', parent_dir, DATASET_NAME.split('.')[0], 'result.json')
+    if not os.path.exists(os.path.join(ROOT_PATH, 'result_change', parent_dir)):
+        os.makedirs(os.path.join(ROOT_PATH, 'result_change', parent_dir))
     # 将所有的方法的结果保存到结果当中
     with open(file_path, 'w') as f:
         json.dump(result, f, indent=2, default=custom_encoder)
