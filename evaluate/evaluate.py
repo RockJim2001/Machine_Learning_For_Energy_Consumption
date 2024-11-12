@@ -9,10 +9,15 @@
 @Description ：对预测结果进行评估
 @Version ：1.0 
 '''
+import numpy
 import numpy as np
+import torch
 from sklearn.metrics import mean_absolute_error, explained_variance_score, r2_score, \
     median_absolute_error, mean_squared_log_error, mean_squared_error
+from sklearn.metrics._regression import _check_reg_targets
+
 from config.log_config import log
+
 logger = log().getLogger("模型性能评估")
 
 
@@ -94,29 +99,41 @@ def root_mean_squared_error(y_true, y_pred):
     return np.sqrt(mse)
 
 
-def relative_absolute_error(y_true, y_pred):
+def relative_absolute_error(y_true, y_pred, multioutput="uniform_average"):
     """
         RAE计算预测值与真实值之间差异的绝对值的平均值，然后再除以真实值的平均值，以便将误差归一化
+    :param multioutput:
     :param y_true:
     :param y_pred:
     :return:
     """
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+        y_true, y_pred, multioutput
+    )
     absolute_errors = np.abs(y_true - y_pred)
     mean_true_value = np.mean(y_true)
+    if np.sum(np.abs(y_true - mean_true_value)) == 0.0:
+        return 1.00000
     rae = np.sum(absolute_errors) / np.sum(np.abs(y_true - mean_true_value))
     return rae
 
 
-def relative_squared_error(y_true, y_pred):
+def relative_squared_error(y_true, y_pred, multioutput="uniform_average"):
     """
         计算相对平方误差（RSE）。
         RSE计算预测值与真实值之间差异的平方的平均值，然后再除以真实值的平均值，以便将误差归一化
+    :param multioutput:
     :param y_true:  真实值的数组。
     :param y_pred:  预测值的数组。
     :return:    rse：float，相对平方误差的值。
     """
+    y_type, y_true, y_pred, multioutput = _check_reg_targets(
+        y_true, y_pred, multioutput
+    )
     true_mean = np.mean(y_true)
     squared_error_num = np.sum(np.square(y_true - y_pred))
     squared_error_den = np.sum(np.square(y_true - true_mean))
+    if squared_error_den == 0.0:
+        return -1.0000
     rse = squared_error_num / squared_error_den
     return rse

@@ -1,0 +1,20 @@
+C:\Users\25760\.conda\envs\torch\python.exe "D:/Softwares/JetBrains/PyCharm 2023.1/plugins/python/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port 56605 --file E:\PythonProject\machine_learning\ML_project-Data_3\ML_project\MOEAs\MOPSO.py
+Connected to pydev debugger (build 231.8109.197)
+====================================================================
+gen|  eval  |      gd     |     igd     |      hv     |   spacing
+--------------------------------------------------------------------
+ 0 |   5    |     None    |     None    | 3.37630E-03 | 1.17187E+04
+ 5 |   30   |     None    |     None    | 5.51899E-04 | 1.87012E+03
+ 10|   55   |     None    |     None    | 3.35646E-04 | 1.45928E+01
+ 15|   80   |     None    |     None    | 1.97860E-03 | 1.34675E+04
+ 20|  105   |     None    |     None    | 3.19766E-04 | 2.82815E+03
+ 25|  130   |     None    |     None    | 1.73590E-04 | 3.69751E+02
+ 30|  155   |     None    |     None    | 4.14674E-04 | 2.07600E+03
+ 35|  180   |     None    |     None    | 5.62941E-05 | 1.32114E+03
+ 40|  205   |     None    |     None    | 4.79102E-05 | 1.56103E+03
+ 45|  230   |     None    |     None    | 3.77999E-05 | 1.54200E+03
+ 49|  250   |     None    |     None    | 2.25063E-02 | 1.14099E+03
+用时：119.7780430316925 秒
+非支配个体数：50 个
+
+Process finished with exit code 0

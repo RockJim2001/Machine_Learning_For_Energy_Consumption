@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/logs/base-数据/test.log" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/model/ann/logs/test.log" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/resource/基础数据-20230723.csv" charset="GBK" />
-    <file url="PROJECT" charset="UTF-8" />
-  </component>
-</project>
